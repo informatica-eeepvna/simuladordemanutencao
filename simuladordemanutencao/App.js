@@ -1,11 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text> Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.navBar}>
+        <View style={styles.navLogo}>
+          <Image style={styles.navIcon} source={require("./assets/icons/logo.svg")} />
+          <Text style={styles.navName}>App</Text>
+          <StatusBar></StatusBar>
+        </View>
+      </View>
     </View>
   );
 }
@@ -13,9 +18,23 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#122334',
+    flexDirection: "row",
+    backgroundColor: '#171718',
     color: '#ffffff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
+  navBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#202123",
+    borderBottomWidth: 2,
+    borderBottomColor: "#31363D",
+    flex: 1,
+    height: 64,
+    top: 0,
+  },
+  navLogo: {
+    width: 32,
+    height: 32,
+  }
 });
