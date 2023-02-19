@@ -1,0 +1,79 @@
+import { StyleSheet, Text, View, Image, StatusBar } from 'react-native';
+import { Header, Icon } from 'react-native-elements';
+
+export default function HomeScreen({ navigation }) {
+    return (
+      <View style={styles.container}>
+        <StatusBar />
+        <Header
+          barStyle='translucent'
+          backgroundColor='rgba(0,0,0,0.35)'
+          placement='left'
+          containerStyle={{
+            flex: 1,
+            gap: 2,
+            flexDirection: "row",
+            alignItems: "center",
+            height: 64,
+            backgroundColor: '#1D1E20',
+            color: '#fff',
+            borderBottomColor: '#373C43',
+            borderBottomWidth: 1,
+            padding: 0
+          }}
+  
+          leftContainerStyle={styles.headerContainer}
+          leftComponent={
+            <Image
+              source={require('./assets/icons/logo.png')} 
+              style={{
+                width: 38,
+                height: 38
+              }}
+            />
+          }
+  
+          centerContainerStyle={styles.headerContainer}
+          centerComponent={{
+            text: "NomeDoApp",
+            style: {
+              fontSize: 16,
+              color: "#fff",
+              fontWeight: "700"
+            }
+          }}
+  
+          rightContainerStyle={styles.headerContainer}
+          rightComponent={
+            <View style={{
+              backgroundColor: '#2B3035',
+              padding: 2,
+              borderRadius: 4
+            }}>
+              <Icon
+                name='menu'
+                color='#fff'
+                size={32}
+              />
+            </View>
+          }
+        />
+      </View>
+    );
+  }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: StatusBar.currentHeight,
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: "#171718",
+    color: "#ffffff",
+    justifyContent: "center",
+  },
+  headerContainer: {
+    flexDirection: "row",
+    alignItems: "center"
+  }
+});
+  
