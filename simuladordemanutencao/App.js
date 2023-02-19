@@ -1,40 +1,73 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StatusBar, View, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+import { Provider as PaperProvider, MD3DarkTheme, useTheme} from 'react-native-paper';
+
+import Icon from 'react-native-vector-icons/Ionicons'
+
+import HomeScreen from './screens/Home';
+import PratiqueScreen from './screens/Pratique';
+import PesquiseScreen from './screens/Pesquise';
+import AprendaScreen from './screens/Aprenda'
+
+const Tab = createMaterialBottomTabNavigator();
+
+const DarkTheme = {
+  ...MD3DarkTheme,
+  colors: {
+    ...MD3DarkTheme.colors,
+  },
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.navBar}>
-        <View style={styles.navLogo}>
-          <Image style={styles.navIcon} source={require("./assets/icons/logo.svg")} />
-          <Text style={styles.navName}>App</Text>
-          <StatusBar></StatusBar>
-        </View>
-      </View>
-    </View>
+    <PaperProvider theme={DarkTheme}>
+        <StatusBar />
+        <NavigationContainer theme={DarkTheme}>
+          <Tab.Navigator>
+              <Tab.Screen 
+                name='Home'
+                component={HomeScreen}
+                options={{
+                  tabBarIcon: ({ color }) => {
+                    return <Icon name='home' color={ color } size={20} />
+                  }
+                }}
+              />
+              <Tab.Screen
+                name='Pratique'
+                component={PratiqueScreen}
+                options={{
+                  tabBarIcon: ({ color }) => {
+                    return <Icon name='play' color={ color } size={20} />
+                  }
+                }}
+              />
+              <Tab.Screen
+                name='Pesquise'
+                component={PesquiseScreen}
+                options={{
+                  tabBarIcon: ({ color }) => {
+                    return <Icon name='search' color={ color } size={20} />
+                  }
+                }}
+              />
+              <Tab.Screen
+                name='Aprenda'
+                component={AprendaScreen}
+                options={{
+                  tabBarIcon: ({ color }) => {
+                    return <Icon name='book' color={ color } size={20} />
+                  }
+                }}
+              />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: '#171718',
-    color: '#ffffff',
-    justifyContent: 'center',
-  },
-  navBar: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#202123",
-    borderBottomWidth: 2,
-    borderBottomColor: "#31363D",
-    flex: 1,
-    height: 64,
-    top: 0,
-  },
-  navLogo: {
-    width: 32,
-    height: 32,
-  }
-});
+
+})
