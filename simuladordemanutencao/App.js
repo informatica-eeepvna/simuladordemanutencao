@@ -1,8 +1,9 @@
-import { StatusBar, View, StyleSheet } from 'react-native';
+import * as React from 'react';
+import { StatusBar, View, StyleSheet, AppRegistry } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-import { Provider as PaperProvider, MD3DarkTheme, useTheme} from 'react-native-paper';
+import { Provider as PaperProvider, MD3DarkTheme} from 'react-native-paper';
 
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -25,14 +26,22 @@ export default function App() {
     <PaperProvider theme={DarkTheme}>
         <StatusBar />
         <NavigationContainer theme={DarkTheme}>
-          <Tab.Navigator>
+          <Tab.Navigator
+            sceneAnimationEnabled={true}
+            sceneAnimationType='opacity'
+            labeled={false}
+            barStyle={{
+              height: 72,
+            }}
+          >
               <Tab.Screen 
                 name='Home'
                 component={HomeScreen}
                 options={{
                   tabBarIcon: ({ color }) => {
-                    return <Icon name='home' color={ color } size={20} />
-                  }
+                    return <Icon name='home-outline' color={ color } size={22} />
+                  },
+                  
                 }}
               />
               <Tab.Screen
@@ -40,7 +49,7 @@ export default function App() {
                 component={PratiqueScreen}
                 options={{
                   tabBarIcon: ({ color }) => {
-                    return <Icon name='play' color={ color } size={20} />
+                    return <Icon name='play-outline' color={ color } size={22} />
                   }
                 }}
               />
@@ -49,7 +58,7 @@ export default function App() {
                 component={PesquiseScreen}
                 options={{
                   tabBarIcon: ({ color }) => {
-                    return <Icon name='search' color={ color } size={20} />
+                    return <Icon name='search-outline' color={ color } size={22} />
                   }
                 }}
               />
@@ -58,7 +67,7 @@ export default function App() {
                 component={AprendaScreen}
                 options={{
                   tabBarIcon: ({ color }) => {
-                    return <Icon name='book' color={ color } size={20} />
+                    return <Icon name='book-outline' color={ color } size={22} />
                   }
                 }}
               />
@@ -70,4 +79,5 @@ export default function App() {
 
 const styles = StyleSheet.create({
 
-})
+});
+
