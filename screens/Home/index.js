@@ -1,10 +1,12 @@
 import * as React from 'react'
 import { View, StyleSheet, ScrollView } from "react-native";
-import Swiper from 'react-native-swiper'
-
-import Icon from 'react-native-vector-icons/Ionicons';
 import { Card, Text, Button, MD3DarkTheme } from "react-native-paper";
+import Swiper from 'react-native-swiper'
+import Icon from 'react-native-vector-icons/Ionicons';
+import { AprendaRoute } from '../Aprenda';
+import { PratiqueRoute } from '../Pratique';
 
+const HomeRoute = 'Home';
 
 const DarkTheme = {
   ...MD3DarkTheme,
@@ -14,6 +16,7 @@ const DarkTheme = {
 };
 
 const HomeScreen = ({ navigation }) => {
+
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -30,7 +33,13 @@ const HomeScreen = ({ navigation }) => {
       <Card style={styles.card}>
         <Card.Cover source={{ uri: 'https://images.pexels.com/photos/3520692/pexels-photo-3520692.jpeg' }} />
         <Card.Actions style={styles.cardActions}>
-          <Button mode='contained' style={styles.button}>Praticar</Button>
+          <Button 
+            onPress={() => {navigation.navigate(PratiqueRoute)}} 
+            mode='contained'
+            style={styles.button}
+          >
+            Praticar
+          </Button>
         </Card.Actions>
       </Card>
 
@@ -55,7 +64,13 @@ const HomeScreen = ({ navigation }) => {
         <Card style={styles.cardItem}>
           <Card.Cover source={{ uri: 'https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }} />
           <Card.Actions style={styles.cardActions}>
-            <Button mode='contained-tonal' style={styles.button}>Estudar</Button>
+            <Button 
+              onPress={() => {}} 
+              mode='contained-tonal' 
+              style={styles.button}
+            >  
+              Estudar
+            </Button>
           </Card.Actions>
         </Card>
 
@@ -132,4 +147,5 @@ const styles = StyleSheet.create({
   }
 });
 
+export { HomeRoute };
 export default HomeScreen;

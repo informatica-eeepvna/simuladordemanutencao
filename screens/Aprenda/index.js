@@ -1,10 +1,12 @@
 import { StyleSheet, View, Text } from "react-native";
 import { Button } from "react-native-elements";
 
-const PratiqueScreen = ({ navigation }) => {
+const AprendaRoute = 'Aprenda';
+
+const AprendaScreen = ({ navigation }) => {
     return (
         <View>
-            <Text>Praticar</Text>
+            <Text>Aprender</Text>
             <Button
                 title="Home"
             />
@@ -12,4 +14,5 @@ const PratiqueScreen = ({ navigation }) => {
     );
 };
 
-export default PratiqueScreen;
+export { AprendaRoute };
+export default AprendaScreen;
