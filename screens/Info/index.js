@@ -1,14 +1,9 @@
 import { StyleSheet, View, Text } from "react-native";
 import { MD3DarkTheme, Button } from "react-native-paper";
+import DarkTheme from '../../assets/themes/DarkTheme';
 
 const InfoRoute = 'Info';
 
-const DarkTheme = {
-    ...MD3DarkTheme,
-    colors: {
-      ...MD3DarkTheme.colors,
-    },
-};
 
 const InfoScreen = ({ navigation }) => {
     return (

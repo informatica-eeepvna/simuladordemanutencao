@@ -6,6 +6,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { Provider as PaperProvider, MD3DarkTheme} from 'react-native-paper';
 
 import Icon from 'react-native-vector-icons/Ionicons'
+import DarkTheme from './assets/themes/DarkTheme';
 
 import HomeScreen, { HomeRoute } from './screens/Home';
 import PratiqueScreen, { PratiqueRoute } from './screens/Pratique';
@@ -15,12 +16,6 @@ import InfoScreen, { InfoRoute } from './screens/Info'
 
 const Tab = createMaterialBottomTabNavigator();
 
-const DarkTheme = {
-  ...MD3DarkTheme,
-  colors: {
-    ...MD3DarkTheme.colors,
-  },
-};
 
 export default function App() {
   return (

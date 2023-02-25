@@ -1,19 +1,14 @@
 import * as React from 'react'
 import { View, StyleSheet, ScrollView } from "react-native";
 import { Card, Text, Button, MD3DarkTheme } from "react-native-paper";
-import Swiper from 'react-native-swiper'
-import Icon from 'react-native-vector-icons/Ionicons';
 import { AprendaRoute } from '../Aprenda';
 import { PratiqueRoute } from '../Pratique';
+import Swiper from 'react-native-swiper'
+import Icon from 'react-native-vector-icons/Ionicons';
+import DarkTheme from '../../assets/themes/DarkTheme';
 
 const HomeRoute = 'Home';
 
-const DarkTheme = {
-  ...MD3DarkTheme,
-  colors: {
-    ...MD3DarkTheme.colors,
-  },
-};
 
 const HomeScreen = ({ navigation }) => {
 
