@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 	},
 	header: {
 		fontWeight: "700",
-		letterSpacing: 2,
+		letterSpacing: -1,
     color: DarkTheme.colors.primary,
     fontWeight: "900",
     marginTop: 16
