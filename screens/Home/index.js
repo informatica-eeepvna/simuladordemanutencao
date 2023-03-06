@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { View, StyleSheet, ScrollView } from "react-native";
-import { Card, Text, Button, MD3DarkTheme } from "react-native-paper";
-import { AprendaRoute } from '../Aprenda';
+import { Card, Text, Button } from "react-native-paper";
 import { PratiqueRoute } from '../Pratique';
 import Swiper from 'react-native-swiper'
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -47,7 +46,6 @@ const HomeScreen = ({ navigation }) => {
 
 
       <Swiper
-        style={styles.wrapper}
         showsButtons={false}
         loop={false}
         height={310}
@@ -137,9 +135,6 @@ const styles = StyleSheet.create({
     width: "100%",
     borderRadius: 8,
   },
-  wraper: {
-    flex: 1
-  }
 });
 
 export { HomeRoute };
